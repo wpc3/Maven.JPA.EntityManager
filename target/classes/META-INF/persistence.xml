@@ -5,14 +5,14 @@
                                  http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
              version="2.1">
 
-    <persistence-unit name="yourPersistenceUnitName" transaction-type="RESOURCE_LOCAL">
-        <class>com.example.YourEntityClass</class>
+    <persistence-unit name="PERSISTENCE" transaction-type="RESOURCE_LOCAL">
+        <class>com.example.Artist.class</class>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/yourDatabaseName"/>
-            <property name="javax.persistence.jdbc.user" value="yourUsername"/>
-            <property name="javax.persistence.jdbc.password" value="yourPassword"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/music"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="Mightymac18!"/>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+<!--            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>-->
             <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>
     </persistence-unit>

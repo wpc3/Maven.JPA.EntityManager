@@ -1,0 +1,4 @@
+entities/JPAUtil.class
+services/RunApp.class
+services/CRDOperations.class
+entities/Artist.class

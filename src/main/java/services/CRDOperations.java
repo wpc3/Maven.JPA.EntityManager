@@ -23,8 +23,8 @@ public class CRDOperations {
     public void findEntity(){
         EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
-        Artist artist = entityManager.find(Artist.class,1);
-        System.out.println(artist.getId() + artist.getLastName() + artist.getLastName());
+        Artist artist = entityManager.find(Artist.class,2);
+        System.out.println(artist.getId() + " " + artist.getFirstName() + " " + artist.getLastName());
     }
 
 

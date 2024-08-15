@@ -28,6 +28,8 @@ public class Artist {
         this.lastName = lastName;
     }
 
+    public Artist(){}
+
     public int getId() {
         return id;
     }
