@@ -26,10 +26,10 @@ public class CD {
     @Column(name = "price")
     private  int price;
 
-
-    @OneToMany(mappedBy = "id", fetch = FetchType.EAGER)
-    private Set<Artist> artists = new HashSet<>();
-
+@ManyToMany(mappedBy = "cds", fetch = FetchType.EAGER)
+//    @OneToMany(mappedBy = "id", fetch = FetchType.EAGER)
+//    private Set<Artist> artists = new HashSet<>();
+    private Set<Artist> artists;
     public CD(int id, String title, String genre, int year, int price) {
         this.id = id;
         this.title = title;

@@ -3,6 +3,7 @@ package entities;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "artist")
@@ -23,9 +24,17 @@ public class Artist {
     @Column(name = "instrument")
     private String instrument;
 
-    @ManyToOne()
-    @JoinTable(name = "id")
-    private CD cd;
+//    @ManyToOne()
+//    @JoinTable(name = "id")
+//    private CD cd;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "artist_cd", joinColumns =
+            @JoinColumn(name = "artist_id"),
+            inverseJoinColumns = @JoinColumn(name = "cd_id")
+
+    )
+    private Set<CD> cds = new HashSet<>();
 
 
     public Artist(int id, String firstName, String lastName, String instrument) {
@@ -69,12 +78,21 @@ public class Artist {
         this.instrument = instrument;
     }
 
-    public CD getCd() {
-        return cd;
+//    public CD getCd() {
+//        return cd;
+//    }
+//
+//    public void setCd(CD cd) {
+//        this.cd = cd;
+//    }
+
+
+    public Set<CD> getCds() {
+        return cds;
     }
 
-    public void setCd(CD cd) {
-        this.cd = cd;
+    public void setCds(Set<CD> cds) {
+        this.cds = cds;
     }
 
     @Override
