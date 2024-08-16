@@ -37,8 +37,16 @@ public class CRDOperations {
         entityManager.getTransaction().commit();
         entityManager.close();
         System.out.println(artist.getId() + " " + artist.getFirstName() + " " + artist.getLastName() + " " + artist.getInstrument());
+    }
 
-
+    public void removeEntity(){
+        EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
+        entityManager.getTransaction().begin();
+        Artist artist = entityManager.find(Artist.class,6);
+        System.out.println("Deleting record: " + artist.getId() + " " + artist.getFirstName() + " " + artist.getLastName() + " " + artist.getInstrument());
+        entityManager.remove(artist);
+        entityManager.getTransaction().commit();
+        entityManager.close();
     }
 
 

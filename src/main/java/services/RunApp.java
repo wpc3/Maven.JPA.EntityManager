@@ -7,6 +7,7 @@ public class RunApp {
         CRDOperations crdOperations = new CRDOperations();
 //        crdOperations.insertEntity();
 //        crdOperations.findEntity();
-        crdOperations.updateEntity();
+//        crdOperations.updateEntity();
+        crdOperations.removeEntity();
     }
 }
