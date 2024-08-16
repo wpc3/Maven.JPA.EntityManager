@@ -5,7 +5,8 @@ public class RunApp {
 
     public static void main(String[] args) {
         CRDOperations crdOperations = new CRDOperations();
-        crdOperations.insertEntity();
+//        crdOperations.insertEntity();
 //        crdOperations.findEntity();
+        crdOperations.updateEntity();
     }
 }

@@ -24,8 +24,21 @@ public class CRDOperations {
     public void findEntity(){
         EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
-        Artist artist = entityManager.find(Artist.class,5);
+        Artist artist = entityManager.find(Artist.class,6);
         System.out.println(artist.getId() + " " + artist.getFirstName() + " " + artist.getLastName() + " " + artist.getInstrument());
+    }
+
+    public void updateEntity(){
+        EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
+        entityManager.getTransaction().begin();
+        Artist artist =entityManager.find(Artist.class,6);
+        artist.setFirstName("Dwayne");
+        artist.setLastName("Carter");
+        entityManager.getTransaction().commit();
+        entityManager.close();
+        System.out.println(artist.getId() + " " + artist.getFirstName() + " " + artist.getLastName() + " " + artist.getInstrument());
+
+
     }
 
 
