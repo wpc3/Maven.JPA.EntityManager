@@ -2,6 +2,7 @@ package services;
 
 import entities.Artist;
 import entities.Artist;
+import entities.CD;
 import entities.JPAUtil;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
@@ -64,7 +65,7 @@ public class CRDOperations implements ArtistList {
 ////        entityManager.getTransaction().commit();
 ////        entityManager.close();
 //        System.out.println(list);
-       List<Artist> list = entityManager.createQuery("SELECT a FROM Artist a ", Artist.class).getResultList();
+       List<Artist> list = entityManager.createQuery("SELECT a FROM Artist a JOIN CD c ON a.id = c.id WHERE genre = 'Rap'", Artist.class).getResultList();
 
             entityManager.close();
         System.out.println(list);
