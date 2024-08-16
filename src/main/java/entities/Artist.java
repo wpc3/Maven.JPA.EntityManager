@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 public class Artist {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private  int id;
 
@@ -22,10 +22,11 @@ public class Artist {
     private String instrument;
 
 
-    public Artist(int id, String firstName, String lastName) {
+    public Artist(int id, String firstName, String lastName, String instrument) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.instrument = instrument;
     }
 
     public Artist(){}
@@ -52,6 +53,14 @@ public class Artist {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getInstrument() {
+        return instrument;
+    }
+
+    public void setInstrument(String instrument) {
+        this.instrument = instrument;
     }
 
     @Override
