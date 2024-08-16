@@ -99,6 +99,6 @@ public class CD {
                 ", year=" + year +
                 ", price=" + price +
                 ", artists=" + artists +
-                '}';
+               '\n' + '}';
     }
 }

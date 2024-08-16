@@ -1,7 +1,7 @@
 package services;
 
 import entities.Artist;
-import entities.CD;
+import entities.Artist;
 import entities.JPAUtil;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
@@ -55,15 +55,16 @@ public class CRDOperations implements ArtistList {
 
 
 //    @Override
-    public List<CD> findAll() {
+    public List<Artist> findAll() {
 //    List<Artist> list = new ArrayList<>();
         EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
 //        entityManager.getTransaction().begin();
 //        entityManager.find(Artist.class,list);
+
 ////        entityManager.getTransaction().commit();
 ////        entityManager.close();
 //        System.out.println(list);
-       List<CD> list = entityManager.createQuery("SELECT a FROM CD a", CD.class).getResultList();
+       List<Artist> list = entityManager.createQuery("SELECT a FROM Artist a ", Artist.class).getResultList();
 
             entityManager.close();
         System.out.println(list);

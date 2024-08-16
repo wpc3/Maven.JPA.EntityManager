@@ -23,7 +23,7 @@ public class Artist {
     @Column(name = "instrument")
     private String instrument;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinTable(name = "id")
     private CD cd;
 
@@ -84,6 +84,6 @@ public class Artist {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", instrument='" + instrument + '\'' +
-                '}';
+                '\n' +'}';
     }
 }
