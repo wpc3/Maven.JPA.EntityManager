@@ -2,6 +2,8 @@ package entities;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+
 @Entity
 @Table(name = "artist")
 
@@ -20,6 +22,10 @@ public class Artist {
 
     @Column(name = "instrument")
     private String instrument;
+
+    @ManyToOne
+    @JoinTable(name = "id")
+    private CD cd;
 
 
     public Artist(int id, String firstName, String lastName, String instrument) {
@@ -61,6 +67,14 @@ public class Artist {
 
     public void setInstrument(String instrument) {
         this.instrument = instrument;
+    }
+
+    public CD getCd() {
+        return cd;
+    }
+
+    public void setCd(CD cd) {
+        this.cd = cd;
     }
 
     @Override
