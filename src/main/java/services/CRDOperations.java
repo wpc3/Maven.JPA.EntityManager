@@ -5,7 +5,10 @@ import entities.JPAUtil;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 
-public class CRDOperations {
+import java.util.ArrayList;
+import java.util.List;
+
+public class CRDOperations implements ArtistList {
 
     public void insertEntity() {
         EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
@@ -50,5 +53,21 @@ public class CRDOperations {
     }
 
 
+//    @Override
+    public List<Artist> findAll() {
+//    List<Artist> list = new ArrayList<>();
+        EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
+//        entityManager.getTransaction().begin();
+//        entityManager.find(Artist.class,list);
+////        entityManager.getTransaction().commit();
+////        entityManager.close();
+//        System.out.println(list);
+       List<Artist> list = entityManager.createQuery("SELECT a FROM Artist a", Artist.class).getResultList();
+            entityManager.close();
+        System.out.println(list);
 
+
+
+        return list;
+    }
 }

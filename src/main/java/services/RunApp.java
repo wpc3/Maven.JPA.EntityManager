@@ -8,6 +8,7 @@ public class RunApp {
 //        crdOperations.insertEntity();
 //        crdOperations.findEntity();
 //        crdOperations.updateEntity();
-        crdOperations.removeEntity();
+//        crdOperations.removeEntity();
+        crdOperations.findAll();
     }
 }
